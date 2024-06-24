@@ -1,0 +1,25 @@
+Perm ID	Gender	Grade	Birth Date	Student Name	Track	Student GU	Primary Language	Home Language	First Name	Last Name
+343260	Female	09	07/07/2008	Brotemarkle, Jalynn Marlene		BA1F0ECF-E97E-476F-BEEE-3FFB4407B221		English	Jalynn	Brotemarkle
+268993	Female	09	02/21/2008	Cipriano Vera, Kimberly Citlaly		FCC2102E-B392-40B7-A64B-9542A68CBD80		Spanish	Kimberly	Cipriano Vera
+289682	Female	09	05/06/2008	Dominguez, Jasmin		2F993937-145A-4A8D-8563-FF7C98F50FDE		Spanish	Jasmin	Dominguez
+295562	Female	09	03/27/2008	Donosa Galvan, Esperanza		66DDF86C-1007-448C-873D-983A203983B1		Spanish	Esperanza	Donosa Galvan
+379405	Male	09	09/03/2008	Garcia Hernandez, Cristofer		49C90DC6-C886-4FD8-B111-D3F0253AB5A0		Spanish	Cristofer	Garcia Hernandez
+297926	Male	09	05/29/2008	Hernandez, Julius George		4BF832A6-7585-4568-8950-9C8594267BE7		English	Julius	Hernandez
+289534	Female	09	10/17/2007	Houston, Rylie		B3BA1395-D0DA-4E81-A2D4-7538CFDC02D9		English	Rylie	Houston
+295166	Female	09	03/26/2008	Islas Montiel, Kenia Adamaris		DC8BC1B3-321D-489E-95A9-A5389CFB7345		Spanish	Kenia	Islas Montiel
+273597	Female	09	07/01/2008	Kelly, Amanda Mei		C60898A7-1C85-4B99-9AF4-0C57A9AEA8CE	English	English	Amanda	Kelly
+393038	Female	09	01/09/2008	Marin, Luz De Los Angeles		470FCF4C-525E-402E-9DE5-DE71F7F519CA	Spanish	Spanish	Luz	Marin
+289345	Female	09	10/29/2007	Marquez, Destiny Hoppe		E187FD17-C8E8-47E9-AD63-EE130D768C9A		English	Destiny	Marquez
+278931	Female	09	08/12/2008	Matthews, Lydia Paige		4701F7A4-D081-488E-92D4-2C82B8B30307		English	Lydia	Matthews
+289822	Female	09	07/03/2008	Medina, Natalie		4F3B7E61-E7F9-4D70-B7F0-D0557029DEB3		Spanish	Natalie	Medina
+291912	Male	09	10/12/2007	Mendoza, Francisco		2528F143-AC67-462B-BD45-96AA7063AD34	English	Spanish	Francisco	Mendoza
+388676	Female	09	12/25/2008	Monroy Parra, Sherlyn		59519F25-B90A-4743-BF92-38B21158DFA1	English	Spanish	Sherlyn	Monroy Parra
+356919	Female	09	09/24/2008	Morales Garcia, Vianey Breytza		C597F6EE-CAF0-4DE6-BDEC-5A91776DC6ED	Spanish	Spanish	Vianey	Morales Garcia
+304886	Male	09	09/12/2007	Perez, Carlos Andres		D2555C6A-8E9A-4B6A-8CD4-010F396F65B2		English	Carlos	Perez
+332412	Male	09	07/04/2008	Ramirez Flores, Irving Josue		0E358761-52CB-479E-AEC0-7DEA5E57C3AC		Spanish	Irving Josue	Ramirez Flores
+292015	Male	09	11/25/2007	Rufino Arevalo, Carlos Xavier		4187607F-633D-4230-90CA-A76679622581		Spanish	Carlos	Rufino Arevalo
+294013	Male	09	07/09/2008	Townes, Mikel Lyric		219D191C-4AAC-4B1E-BFB5-50E9845A2757	English	English	Mikel	Townes
+315862	Female	09	04/07/2007	Wells, Elizabeth Marion		E51EB0C2-1039-445B-B483-BDB21CF54E79		English	Elizabeth	Wells
+392206	Female	09	09/08/2007	Willet, Emma Mae		D85FE433-B309-4353-AA30-36CA6C624A08	English	English	Emma	Willet
+405091	Female	09	08/08/2008	Wright, Chloe Kaleikaumaka		39F1ACD4-27D1-4BCD-AE67-109E5CA0AB39		English	Chloe	Wright
+377238	Male	09	02/29/2008	Zapien Fernandez, Armando Julian		60F923CC-2004-4246-BD09-9433D17C65EB	English	Spanish	Armando	Zapien Fernandez
