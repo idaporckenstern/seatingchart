@@ -2,7 +2,7 @@ import tkinter as tk
 
 class seat():
     edit = False
-    def __init__(self, seat_number, x, y, canvas, student):
+    def __init__(self, seat_number, canvas, student = "NULL", x = 0, y = 200):
         self.seat_number = seat_number
         self.x = x
         self.y = y

@@ -1,14 +1,16 @@
 import tkinter as tk
 import database
+import seatClass
 
 class student():
     no_seat_location = 100
-    def __init__(self, id, first_name, last_name, seat, canvas, hour, save_button, seats, drop_label, cursor):
+    hour = "first_hour"
+    def __init__(self, id, first_name, last_name, seat:seatClass.seat, canvas, hour, save_button_window, seats, drop_label, cursor):
         self.id = id
         self.last_name = last_name
         self.seat = seat
         self.hour = hour
-        self.save_button = save_button
+        self.save_button_window = save_button_window
         self.canvas = canvas
         self.seats = seats
         self.drop_label = drop_label
@@ -27,7 +29,7 @@ class student():
         self.xpos = self.label.winfo_x() - self.label.startX + event.x
         self.ypos = self.label.winfo_y() - self.label.startY + event.y
         self.label.place(x=self.xpos, y=self.ypos)
-        self.canvas.itemconfigure(self.save_button, state = 'normal')
+        #self.canvas.itemconfigure(self.save_button, state = 'normal')
         
     #updates the label position based on the seat they are assigned
     def update_position(self):
@@ -51,12 +53,15 @@ class student():
                     self.seat = seat
                     self.tempStudent.update_position()
                 else:
-                    self.seat.student = "NULL"
+                    if self.seat != "NULL":
+                        self.seat.student = "NULL"
                     self.seat = seat
                     seat.student = self
+                self.canvas.itemconfigure(self.save_button_window, state = 'normal')
                 break
         if (self.xpos > self.drop_label.winfo_x() - buffer) and (self.xpos < self.drop_label.winfo_x() + buffer) and (self.ypos > self.drop_label.winfo_y() - buffer) and (self.ypos < self.drop_label.winfo_y() + buffer):
             
+            self.canvas.itemconfigure(self.save_button_window, state = 'normal')
             database.dropStudent(self.id, self.hour, self.cursor)
             self.label.destroy()
             return

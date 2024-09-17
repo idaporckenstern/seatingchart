@@ -16,36 +16,32 @@ def change_class(event):
         students.clear()
 
     if clicked.get() == "First hour":
-        hour = "first_hour"
+        studentClass.student.hour = "first_hour"
         sql = "SELECT * FROM first_hour ORDER BY seat_number DESC"
     elif clicked.get() == "Second hour":
-        hour = "second_hour"
+        studentClass.student.hour = "second_hour"
         sql = "SELECT * FROM second_hour ORDER BY seat_number DESC"
     elif clicked.get() == "Third hour":
-        hour = "third_hour"
+        studentClass.student.hour = "third_hour"
         sql = "SELECT * FROM third_hour ORDER BY seat_number DESC"
     elif clicked.get() == "Sixth hour":
-        hour = "sixth_hour"
+        studentClass.student.hour = "sixth_hour"
         sql = "SELECT * FROM sixth_hour ORDER BY seat_number DESC"
     elif clicked.get() == "Seventh hour":
-        hour = "seventh_hour"
+        studentClass.student.hour = "seventh_hour"
         sql = "SELECT * FROM seventh_hour ORDER BY seat_number DESC"
 
     cursor.execute(sql)
     results = cursor.fetchall()
     
-
-    i = 0
-    for seat in seats:
-        if results[i][3] == seat.seat_number:
-          students.append(studentClass.student(results[i][0], results[i][1], results[i][2], seat, canvas, hour, save_button_window, seats, drop_label, cursor))
-          seat.student = students[i]  
-          i+=1
-          if i >= len(results):
-              break
+    
     for result in results:
-        if result[3] == (None):
-            students.append(studentClass.student(result[0], result[1], result[2], "NULL", canvas, hour, save_button_window, seats, drop_label, cursor))
+        for seat in seats:
+            if result[3] == seat.seat_number:
+                students.append(studentClass.student(result[0], result[1], result[2], seat, canvas, studentClass.student.hour, save_button_window, seats, drop_label, cursor))
+                seat.student = students[len(students) - 1]
+        if result[3] is None:
+            students.append(studentClass.student(result[0], result[1], result[2], "NULL", canvas, studentClass.student.hour, save_button_window, seats, drop_label, cursor))
 
     for student in students:
         student.check_name(students)
@@ -138,22 +134,12 @@ def toggleAddStudentOn(event):
     canvas.itemconfigure(submitButton_window, state = "normal")
 
 def addStudent(id, firstName, lastName):
-    if clicked.get() == "First hour":
-        hour = "first_hour"
-    elif clicked.get() == "Second hour":
-        hour = "second_hour"
-    elif clicked.get() == "Third hour":
-        hour = "third_hour"
-    elif clicked.get() == "Sixth hour":
-        hour = "sixth_hour"
-    elif clicked.get() == "Seventh hour":
-        hour = "seventh_hour"
     
-    sql = "INSERT INTO " + hour + " (id, first_name, last_name) VALUES (%s, %s, %s)"
+    sql = "INSERT INTO " + studentClass.student.hour + " (id, first_name, last_name) VALUES (%s, %s, %s)"
     val = (id, firstName, lastName)
     cursor.execute(sql, val)
     studentdb.commit()
-    newStudent = studentClass.student(id, firstName, lastName, "NULL", canvas, hour, save_button, seats, drop_label, cursor)
+    newStudent = studentClass.student(id, firstName, lastName, "NULL", canvas, studentClass.student.hour, save_button_window, seats, drop_label, cursor)
     newStudent.check_name(students)
     newStudent.create_label()
     newStudent.seat = "NULL"
@@ -163,8 +149,8 @@ def addStudent(id, firstName, lastName):
 #database info
 studentdb = mysql.connector.connect(
     host = "localhost",
-    user = "josh",
-    password = "password",
+    user = "seating_chart",
+    password = "48UhdZH8AmGBCc",
     database="students"
 )
 
@@ -189,7 +175,10 @@ results = cursor.fetchall()
 seats = []
 students = []
 for seat in results:
-    seats.append(seatClass.seat(seat[0], seat[1], seat[2], canvas, "NULL"))
+    if seat is None:
+        seats.append(seatClass.seat(seat[2], canvas))
+    else:
+        seats.append(seatClass.seat(seat[2], canvas, x = seat[0], y = seat[1]))
 
 #setup buttons and class dropdown menu
 clicked = tk.StringVar()
@@ -238,7 +227,7 @@ randomize_button_window = canvas.create_window(300, 10, anchor = "nw", window = 
 edit_seats_button_window = canvas.create_window(390, 10, anchor = "nw", window = edit_seats_button)
 clear_seating_chart_button_window = canvas.create_window(478, 10, anchor = "nw", window = clear_seating_chart_button)
 edit_seats_location_button_window = canvas.create_window(617, 10, anchor = "nw", window = edit_seats_location_button)
-
+canvas.update_idletasks()  # Refresh canvas
 
 alphabetize_button.bind("<Button-1>", alphabetize)
 randomize_button.bind("<Button-1>", randomize)
